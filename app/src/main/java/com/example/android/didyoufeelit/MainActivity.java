@@ -67,6 +67,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Event result) {
+            // If there is no result, do nothing.
+            if (result == null) {
+                return;
+            }
+
             // Update the information displayed to the user.
             super.onPostExecute(result);
             updateUi(result);
